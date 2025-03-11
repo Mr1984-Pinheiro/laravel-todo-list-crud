@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Dojo extends Model
 {
+    protected $fillable = ['name', 'location', 'description'];
+
     /** @use HasFactory<\Database\Factories\DojoFactory> */
     use HasFactory;
 }
