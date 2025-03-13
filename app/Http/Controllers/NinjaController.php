@@ -10,7 +10,7 @@ class NinjaController extends Controller
     public function index()
     {
 
-        $ninjas = Ninja::orderBy('created_at', 'desc')->paginate(10);
+        $ninjas = Ninja::with('dojo')->orderBy('created_at', 'desc')->paginate(10);
 
         return view('ninjas.index', ["greenting" => "hello", "ninjas" => $ninjas]);
     }
@@ -18,7 +18,7 @@ class NinjaController extends Controller
     public function show($id)
     {
 
-        $ninja = Ninja::findOrfail($id);
+        $ninja = Ninja::with('dojo')->findOrfail($id);
 
         return view('ninjas.show', ["ninja" => $ninja]);
     }
