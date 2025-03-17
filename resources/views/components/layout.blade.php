@@ -15,7 +15,7 @@
             <a href="{{ route('ninjas.create') }}">Create New Ninja</a>
         </nav>
     </header>
-    <main class="container">
+    <main class="container !min-h-screen !overflow-auto">
         {{ $slot }}
     </main>
 </body>
